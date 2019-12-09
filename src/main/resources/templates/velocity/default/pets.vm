@@ -1,0 +1,26 @@
+<h2>Pets table</h2>
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Species</th>
+    <th>Favorite food</th>
+    <th>Birth year</th>
+    <th>Photo</th>
+</tr>
+#foreach($pet in $pets)
+<tr>
+    <td>$pet.name</td>
+    <td>$pet.species</td>
+    <td>
+
+#if ($pet.favFood.size() != 0)
+#foreach($food in $pet.favFoods)
+    $food <br/>
+#end
+#end
+    </td>
+    <td>$pet.birthYear</td>
+    <td><img src=$pet.photo></td>
+</tr>
+#end
+</table>
